@@ -7,7 +7,7 @@ extends Control
 var url_map: = {
 	"作者": "https://space.bilibili.com/1986364363?spm_id_from=333.1007.0.0", 
 	"美术": "https://space.bilibili.com/169529553?spm_id_from=333.337.0.0", 
-	"源代码": "https://github.com/lefengyao/pvz_warG"
+	"源代码": "https://github.com/lefengyao/pvz_warG-2"
 }
 
 func _ready() -> void :
