@@ -1,0 +1,67 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="pvz_warG"
+run/main_scene="res://scenes/levels/chose_map.tscn"
+config/features=PackedStringArray("4.7", "Mobile")
+boot_splash/show_image=false
+config/icon="res://assets/textures/icon.svg"
+
+[autoload]
+
+Audiomanager="*res://src/autoload/audiomanager.gd"
+Globalmanager="*res://src/autoload/globalmanager.gd"
+GenerateCards="*res://src/autoload/generate_cards.gd"
+GameProgressBus="*res://src/autoload/game_progress_bus.gd"
+EventBus="*res://src/autoload/event_bus.gd"
+Settings="*res://src/autoload/settings.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+
+[dotnet]
+
+project/assembly_name="pvz_warG"
+
+[editor_overrides]
+
+text_editor/behavior/indent/type=0
+text_editor/behavior/indent/size=4
+
+[global_group]
+
+zombie=""
+plant=""
+melee_type_plant=""
+defence_plant=""
+trap=""
+
+[gui]
+
+theme/custom_font="res://assets/fonts/Silver.ttf"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
+
+[audio]
+
+buses/default_bus_layout="res://resources/audio/default_bus_layout.tres"

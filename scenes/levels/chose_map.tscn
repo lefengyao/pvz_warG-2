@@ -1,0 +1,356 @@
+[gd_scene format=3 uid="uid://cqq0ib57l0ko"]
+
+[ext_resource type="Script" uid="uid://dbptbl06gvf8k" path="res://src/levels/general/chose_map.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://d05w7qb8ijqoc" path="res://scenes/levels/front_yard/yard_level_select.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://ql146lk0mws3" path="res://assets/textures/ui/slot/slot.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://qckam548yqwr" path="res://assets/textures/levels/front_yard/b70160bc76ad1d896a66838bb3b12428.png" id="4"]
+[ext_resource type="Script" uid="uid://wcrghg1o4gsd" path="res://src/levels/general/map_button.gd" id="5"]
+[ext_resource type="AudioStream" uid="uid://d3ogrskdas5r" path="res://assets/audio/general_music/tap.wav" id="6"]
+[ext_resource type="FontFile" uid="uid://cr6ila827jftp" path="res://assets/fonts/Silver.ttf" id="7"]
+[ext_resource type="Texture2D" uid="uid://vxvkff72opcs" path="res://assets/textures/levels/forest/forest.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dguqbky7vl0do" path="res://assets/textures/levels/deep_woods/darkmap.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://ba3el3vgmluq8" path="res://assets/textures/ui/button.png" id="10"]
+[ext_resource type="PackedScene" uid="uid://dbtn00000001" path="res://scenes/ui/draggable_button.tscn" id="11"]
+[ext_resource type="Texture2D" uid="uid://cu34gh5gpj1gi" path="res://assets/textures/ui/music/D4C39D9F8B4D386530CA29D6E3095444.png" id="12"]
+
+[sub_resource type="Gradient" id="Gradient_grwe1"]
+colors = PackedColorArray(0.79042274, 0.8608033, 1, 1, 0.21623439, 0.44282222, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_va424"]
+gradient = SubResource("Gradient_grwe1")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68ggs"]
+atlas = ExtResource("3")
+region = Rect2(71, 86, 132, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va424"]
+atlas = ExtResource("4")
+region = Rect2(14.467987, 178.97171, 426.82663, 492.34128)
+
+[sub_resource type="Gradient" id="Gradient_ls1mo"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hm2v2"]
+gradient = SubResource("Gradient_ls1mo")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls1mo"]
+atlas = ExtResource("8")
+region = Rect2(0, 289.31955, 438.1562, 492.16544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm2v2"]
+atlas = ExtResource("9")
+region = Rect2(267.688, 326.00946, 452.24573, 492.3404)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yahnq"]
+atlas = ExtResource("3")
+region = Rect2(71, 86, 132, 144)
+
+[sub_resource type="Theme" id="Theme_xxwfl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d86ww"]
+atlas = ExtResource("10")
+region = Rect2(34, 112, 229, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxwfl"]
+atlas = ExtResource("10")
+region = Rect2(34, 112, 229, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onqah"]
+atlas = ExtResource("12")
+region = Rect2(7, 13, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtkdq"]
+atlas = ExtResource("12")
+region = Rect2(10, 50, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abpno"]
+atlas = ExtResource("12")
+region = Rect2(40, 13, 31, 31)
+
+[node name="Control" type="Control" unique_id=1629561620]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1074.0
+offset_bottom = 809.0
+scale = Vector2(1.787, 1.334)
+script = ExtResource("1")
+next_scene = ExtResource("2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1836883141]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(16.774012, 12.62557)
+texture = SubResource("GradientTexture2D_va424")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=366678858]
+layout_mode = 0
+offset_left = -56.000004
+offset_top = 189.65517
+offset_right = -16.000008
+offset_bottom = 229.65517
+scale = Vector2(29.004644, 15.236071)
+texture = SubResource("AtlasTexture_68ggs")
+region_rect = Rect2(-8.868462, 7.271755, 147.41098, 125.95708)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=986722971]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 234.65515
+offset_right = 1458.0
+offset_bottom = 726.65515
+scale = Vector2(0.600513, 1.0607027)
+theme_override_constants/separation = 0
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer" unique_id=381370944]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_va424")
+script = ExtResource("5")
+tap_sfx = ExtResource("6")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TextureButton" unique_id=1393205334]
+visible = false
+layout_mode = 0
+offset_left = -9.689237
+offset_top = -1.8855426
+offset_right = 413.28247
+offset_bottom = 493.06937
+scale = Vector2(1.0727227, 1.0130476)
+texture = SubResource("GradientTexture2D_hm2v2")
+
+[node name="Label" type="Label" parent="HBoxContainer/TextureButton/TextureRect" unique_id=467035302]
+layout_mode = 0
+offset_left = 18.317661
+offset_top = 8.484943
+offset_right = 69.31766
+offset_bottom = 53.484943
+scale = Vector2(7.831737, 6.3000236)
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 40
+text = "庭院"
+
+[node name="Label2" type="Label" parent="HBoxContainer/TextureButton/TextureRect" unique_id=1163833177]
+layout_mode = 0
+offset_left = 119.2494
+offset_top = 276.39676
+offset_right = 170.24939
+offset_bottom = 321.39676
+scale = Vector2(3.7905545, 2.7353706)
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 40
+text = "进入"
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer" unique_id=1199397483]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ls1mo")
+script = ExtResource("5")
+tap_sfx = ExtResource("6")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TextureButton2" unique_id=198275894]
+visible = false
+layout_mode = 0
+offset_left = -9.689237
+offset_top = -1.8855426
+offset_right = 413.28247
+offset_bottom = 493.06937
+scale = Vector2(1.0727227, 1.0130476)
+texture = SubResource("GradientTexture2D_hm2v2")
+
+[node name="Label" type="Label" parent="HBoxContainer/TextureButton2/TextureRect" unique_id=1682857619]
+layout_mode = 0
+offset_left = 18.317661
+offset_top = 8.484943
+offset_right = 69.31766
+offset_bottom = 53.484943
+scale = Vector2(7.831737, 6.3000236)
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 40
+text = "森林"
+
+[node name="Label2" type="Label" parent="HBoxContainer/TextureButton2/TextureRect" unique_id=1857496076]
+layout_mode = 0
+offset_left = 20.180565
+offset_top = 282.91116
+offset_right = 121.180565
+offset_bottom = 327.91116
+scale = Vector2(3.7905545, 2.7353706)
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 40
+text = "敬请期待"
+
+[node name="TextureButton3" type="TextureButton" parent="HBoxContainer" unique_id=303915637]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_hm2v2")
+script = ExtResource("5")
+tap_sfx = ExtResource("6")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TextureButton3" unique_id=1100177636]
+visible = false
+layout_mode = 0
+offset_right = 422.9717
+offset_bottom = 494.9549
+scale = Vector2(1.0742714, 1.0016285)
+texture = SubResource("GradientTexture2D_hm2v2")
+
+[node name="Label" type="Label" parent="HBoxContainer/TextureButton3/TextureRect" unique_id=648980768]
+layout_mode = 0
+offset_left = 18.317661
+offset_top = 8.484943
+offset_right = 69.31766
+offset_bottom = 101.48494
+scale = Vector2(3.9714303, 6.2178736)
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 40
+text = "森林深处"
+
+[node name="Label3" type="Label" parent="HBoxContainer/TextureButton3/TextureRect" unique_id=366103828]
+layout_mode = 0
+offset_left = 20.180565
+offset_top = 282.91116
+offset_right = 121.180565
+offset_bottom = 327.91116
+scale = Vector2(3.7905545, 2.7353706)
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 40
+text = "敬请期待"
+
+[node name="Label" type="Label" parent="." unique_id=1460242119]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -323.5
+offset_right = 323.5
+offset_bottom = 284.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 256
+text = "pvz_warG"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1890375854]
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 63.718136
+texture = SubResource("AtlasTexture_yahnq")
+expand_mode = 1
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=1225993855]
+layout_mode = 0
+offset_left = -2.2383883
+offset_top = 5.247376
+offset_right = 150.76161
+offset_bottom = 85.247375
+theme = SubResource("Theme_xxwfl")
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 64
+flat = true
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "作者"
+popup/item_0/id = 0
+popup/item_1/text = "美术"
+popup/item_1/id = 1
+popup/item_2/text = "源代码"
+popup/item_2/id = 2
+
+[node name="view" type="TextureRect" parent="." unique_id=489875809]
+layout_mode = 0
+offset_left = 132.62451
+offset_top = 2.9985008
+offset_right = 398.6245
+offset_bottom = 118.998505
+scale = Vector2(0.5228572, 0.5228572)
+texture = SubResource("AtlasTexture_d86ww")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="view" unique_id=552254085]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 8.0
+offset_right = 217.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 128
+text = "查看"
+flat = true
+icon_alignment = 1
+
+[node name="setting" type="TextureRect" parent="." unique_id=1338673208]
+layout_mode = 0
+offset_left = 934.5271
+offset_top = 0.7496252
+offset_right = 1200.527
+offset_bottom = 116.74962
+scale = Vector2(0.5228572, 0.5228572)
+texture = SubResource("AtlasTexture_d86ww")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="setting" unique_id=2102987170]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 8.0
+offset_right = 217.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 128
+text = "设置"
+flat = true
+icon_alignment = 1
+
+[node name="setting" type="TextureRect" parent="setting" unique_id=1226172830]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1590.9911
+offset_top = 352.04083
+offset_right = -522.86414
+offset_bottom = 1174.99
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("AtlasTexture_xxwfl")
+expand_mode = 1
+
+[node name="DraggableProgressBar" parent="setting/setting" unique_id=1634096944 instance=ExtResource("11")]
+layout_mode = 0
+offset_left = 107.026855
+offset_top = 379.93307
+offset_right = 248.02686
+offset_bottom = 389.93307
+scale = Vector2(4.9074693, 6.018185)
+
+[node name="DraggableProgressBar2" parent="setting/setting" unique_id=1751181529 instance=ExtResource("11")]
+layout_mode = 0
+offset_left = 102.74579
+offset_top = 599.2905
+offset_right = 243.74579
+offset_bottom = 609.2905
+scale = Vector2(4.906951, 6.01755)
+tex1 = SubResource("AtlasTexture_onqah")
+tex2 = SubResource("AtlasTexture_mtkdq")
+tex3 = SubResource("AtlasTexture_abpno")
+bus_name = "sfx"
+
+[node name="Button2" type="Button" parent="setting/setting" unique_id=1469625139]
+layout_mode = 0
+offset_left = 46.021606
+offset_top = 143.37094
+offset_right = 352.0216
+offset_bottom = 293.37094
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 128
+text = "返	回"
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="view/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="setting/Button" to="." method="_on_button3_pressed"]
+[connection signal="pressed" from="setting/setting/Button2" to="." method="_on_button_2_pressed"]

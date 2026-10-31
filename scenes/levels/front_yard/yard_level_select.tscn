@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://d05w7qb8ijqoc"]
+
+[ext_resource type="Script" uid="uid://dpnh5tu21o70r" path="res://src/levels/front_yard/yard_level_select.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cqcfqoc61abrn" path="res://scenes/levels/front_yard/level/normal_front_yard_level.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://b31oehe1ln8q8" path="res://scenes/levels/front_yard/level_logic/level_logic1.tscn" id="3"]
+[ext_resource type="Script" uid="uid://b3c5kgk84js4t" path="res://src/resources/level_resource.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://c5fupmvnmitlk" path="res://scenes/levels/front_yard/level_logic/level_logic2.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://b0iax5y0lck1" path="res://scenes/levels/front_yard/level_logic/level_logic3.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://1v53gqqsjndl" path="res://scenes/levels/front_yard/level_logic/level_logic4.tscn" id="7"]
+[ext_resource type="AudioStream" uid="uid://d3ogrskdas5r" path="res://assets/audio/general_music/tap.wav" id="8"]
+[ext_resource type="Texture2D" uid="uid://qckam548yqwr" path="res://assets/textures/levels/front_yard/b70160bc76ad1d896a66838bb3b12428.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://ba3el3vgmluq8" path="res://assets/textures/ui/button.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://c04t5b5v87wkt" path="res://assets/textures/ui/0.png" id="11"]
+[ext_resource type="FontFile" uid="uid://cr6ila827jftp" path="res://assets/fonts/Silver.ttf" id="12"]
+
+[sub_resource type="Resource" id="Resource_6sqqc"]
+script = ExtResource("4")
+level_scene = ExtResource("2")
+logic_scene = ExtResource("3")
+level_name = "庭院危机"
+metadata/_custom_type_script = "uid://b3c5kgk84js4t"
+
+[sub_resource type="Resource" id="Resource_q23jo"]
+script = ExtResource("4")
+level_scene = ExtResource("2")
+logic_scene = ExtResource("5")
+level_name = "大杂烩"
+metadata/_custom_type_script = "uid://b3c5kgk84js4t"
+
+[sub_resource type="Resource" id="Resource_4h6b4"]
+script = ExtResource("4")
+level_scene = ExtResource("2")
+logic_scene = ExtResource("6")
+level_name = "全员撑杆"
+metadata/_custom_type_script = "uid://b3c5kgk84js4t"
+
+[sub_resource type="Resource" id="Resource_0gdfd"]
+script = ExtResource("4")
+level_scene = ExtResource("2")
+logic_scene = ExtResource("7")
+level_name = "全员威龙"
+metadata/_custom_type_script = "uid://b3c5kgk84js4t"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug015"]
+atlas = ExtResource("9")
+region = Rect2(15.809036, 52.00157, 1168.353, 663.31476)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iov81"]
+atlas = ExtResource("10")
+region = Rect2(34, 112, 229, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbmn7"]
+atlas = ExtResource("11")
+region = Rect2(0, 2, 29, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqjdq"]
+atlas = ExtResource("10")
+region = Rect2(34, 112, 229, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xtp5"]
+atlas = ExtResource("10")
+region = Rect2(34, 112, 229, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdftq"]
+atlas = ExtResource("11")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sqqc"]
+atlas = ExtResource("10")
+region = Rect2(34, 112, 229, 71)
+
+[node name="Control" type="Control" unique_id=472099257]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -752.0
+offset_bottom = -417.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.644, 1.629)
+script = ExtResource("1")
+level_resources = [SubResource("Resource_6sqqc"), SubResource("Resource_q23jo"), SubResource("Resource_4h6b4"), SubResource("Resource_0gdfd")]
+tap_sfx = ExtResource("8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=702831281]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_ug015")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=71235655]
+layout_mode = 0
+offset_left = 273.00003
+offset_top = 528.0
+offset_right = 1360.0
+offset_bottom = 599.0
+scale = Vector2(0.38781267, 1.401749)
+theme_override_constants/separation = 200
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer" unique_id=310455758]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_iov81")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TextureButton" unique_id=1966782249]
+layout_mode = 0
+offset_left = 33.521255
+offset_top = 15.694676
+offset_right = 73.521255
+offset_bottom = 55.694675
+scale = Vector2(3.420161, 1.0137476)
+texture = SubResource("AtlasTexture_pbmn7")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=468979883]
+layout_mode = 2
+texture = SubResource("AtlasTexture_uqjdq")
+
+[node name="Label" type="Label" parent="HBoxContainer/TextureRect" unique_id=1883634841]
+layout_mode = 0
+offset_left = 89.29138
+offset_top = -7.847339
+offset_right = 99.29138
+offset_bottom = 37.15266
+scale = Vector2(5.5283394, 2.8717902)
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 36
+text = "1"
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer" unique_id=410574060]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_7xtp5")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TextureButton2" unique_id=1912987944]
+layout_mode = 0
+offset_left = 41.918983
+offset_top = 3.566972
+offset_right = 81.918976
+offset_bottom = 43.56697
+scale = Vector2(3.532823, 1.4360347)
+texture = SubResource("AtlasTexture_mdftq")
+flip_h = true
+
+[node name="Button" type="Button" parent="." unique_id=1330250475]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 375.0
+offset_right = 617.0
+offset_bottom = 495.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 100
+text = "开始游戏"
+flat = true
+
+[node name="setting" type="TextureRect" parent="." unique_id=1326483335]
+layout_mode = 0
+offset_left = 1.8248177
+offset_top = 2.4554958
+offset_right = 267.82483
+offset_bottom = 118.4555
+scale = Vector2(0.65297997, 0.65297997)
+texture = SubResource("AtlasTexture_6sqqc")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="setting" unique_id=1215420125]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 8.0
+offset_right = 217.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 128
+text = "返回"
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=988777455]
+layout_mode = 0
+offset_left = 179.44038
+offset_top = 137.50768
+offset_right = 826.44037
+offset_bottom = 421.5077
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 256
+text = "庭院危机"
+
+[connection signal="pressed" from="HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="setting/Button" to="." method="_on_button2_pressed"]

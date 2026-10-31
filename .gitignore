@@ -1,0 +1,12 @@
+# Godot generated cache. Keep source .import and .uid files.
+.godot/
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+__pycache__/
+build/
+dist/
+exports/
+tools/logs/
+.codex/sessions/

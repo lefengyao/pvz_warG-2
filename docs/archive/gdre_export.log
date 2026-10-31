@@ -1,0 +1,35 @@
+GDRE Tools v2.6.3
+Windows 10.0.26200, NVIDIA GeForce RTX 5060 Laptop GPU, vulkan
+Opening file: ~/\Downloads\pvz_warG.exe
+Loaded 356 imported files
+WARNING: No assembly file 'pvz_warG.dll' found in any directory in C:\Users\15610\Downloads and no C# files found, assuming it's not a C# project
+   at: GDRESettings::load_project_dotnet_assembly (modules\gdsdecomp\utility\gdre_settings.cpp:2879)
+Detected Engine Version: 4.6.2
+Detected Bytecode Revision: 4.5.0-stable (ebc36a7)
+Verified 797 files, no errors detected!
+Extracted 797 files, no errors detected!
+Saved project config.
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     112
+Scripts not decompiled:                 0
+Imported resources for export session:  356
+Successfully converted:                 356
+Lossy:                                  51
+Rewrote metadata:                       183
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     0
+-------------
+
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 4.6.2 to edit the project.
+
+*******************************************************************************
+
